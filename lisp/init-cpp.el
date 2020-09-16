@@ -13,7 +13,12 @@
   (add-hook 'c++-mode-hook
             (lambda () (lsp)))
   (add-hook 'cuda-mode-hook
-            (lambda () (lsp))))
+            (lambda () (lsp)))
+  ;; Recommended lsp-mode performance optimization.
+  (setq read-process-output-max (* 1024 1024))
+  ;; Disable indentation for C++ namespaces.
+  (add-hook 'c++-mode-hook
+            (lambda () (c-set-offset 'innamespace 0))))
 
 
 (provide 'init-cpp)
