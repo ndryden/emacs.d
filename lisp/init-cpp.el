@@ -18,7 +18,9 @@
   (setq read-process-output-max (* 1024 1024))
   ;; Disable indentation for C++ namespaces.
   (add-hook 'c++-mode-hook
-            (lambda () (c-set-offset 'innamespace 0))))
+            (lambda () (c-set-offset 'innamespace 0)))
+  (setq c-default-style "bsd"
+        c-basic-offset 2))
 
 
 (provide 'init-cpp)

@@ -117,6 +117,7 @@
 (require 'init-auctex)
 (require 'init-cuda)
 (require 'init-cpp)
+(require 'init-cmake)
 
 (require 'init-paredit)
 (require 'init-lisp)
