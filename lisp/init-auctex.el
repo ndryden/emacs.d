@@ -10,7 +10,8 @@
     (setq TeX-view-program-selection '((output-pdf "Preview"))))
   ;; Set up RefTeX.
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-  (setq reftex-plug-into-AUCTeX t))
+  (setq reftex-plug-into-AUCTeX t)
+  (setq TeX-force-default-mode t))
 
 
 (provide 'init-auctex)
