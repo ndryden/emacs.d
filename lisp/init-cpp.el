@@ -20,7 +20,18 @@
   (add-hook 'c++-mode-hook
             (lambda () (c-set-offset 'innamespace 0)))
   (setq c-default-style "bsd"
-        c-basic-offset 2))
+        c-basic-offset 2)
+  ;; Set up yasnippet mode.
+  (add-hook 'c-mode-hook
+            (lambda () (yas-minor-mode-on)))
+  (add-hook 'c++-mode-hook
+            (lambda () (yas-minor-mode-on)))
+  (add-hook 'cuda-mode-hook
+            (lambda () (yas-minor-mode-on)))
+  ;; Add CUDA to lsp.
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp-language-id-configuration '(cuda-mode . "cuda")))
+  )
 
 
 (provide 'init-cpp)
