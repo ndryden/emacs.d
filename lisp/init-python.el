@@ -39,14 +39,10 @@
 ;;(when (maybe-require-package 'reformatter)
 ;;  (reformatter-define black :program "black" :args '("-")))
 
-(when (maybe-require-package 'elpy)
-  (elpy-enable)
-  (setq elpy-rpc-python-command "python3")
-  (setq elpy-rpc-timeout 10)
-  ;; Switch to Flycheck.
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode)
-  (maybe-require-package 'blacken))
+(when (maybe-require-package 'lsp-mode)
+  (require-package 'lsp-pyright)
+  (add-hook 'python-mode-hook
+            (lambda () (lsp))))
 
 (provide 'init-python)
 ;;; init-python.el ends here
