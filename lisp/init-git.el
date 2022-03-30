@@ -95,6 +95,15 @@
          (compilation-buffer-name-function (lambda (major-mode-name) "*git-svn*")))
     (compile (concat "git svn " command))))
 
+
+
+;; Minibuffer pinentry support.
+;; Must have allow-emacs-pinentry and allow-loopback-pinentry in your
+;; ~/.gnupg/gpg-agent.conf.
+(when (maybe-require-package 'pinentry)
+  (setq epg-pinentry-mode 'loopback)
+  (pinentry-start))
+
 
 (provide 'init-git)
 ;;; init-git.el ends here
