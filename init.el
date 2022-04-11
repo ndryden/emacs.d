@@ -61,8 +61,8 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-flymake)
 (require 'init-eglot)
+(require 'init-flycheck)
 
 (require 'init-recentf)
 (require 'init-minibuffer)
