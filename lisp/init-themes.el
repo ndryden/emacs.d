@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;(require-package 'color-theme-sanityinc-solarized)
+(require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
 (require 'solarized-theme)
 
@@ -11,7 +11,7 @@
 (setq custom-safe-themes t)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(solarized-dark))
+(setq-default custom-enabled-themes '(sanityinc-solarized-dark))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -23,6 +23,16 @@
 
 (add-hook 'after-init-hook 'reapply-themes)
 
+;; Didn't end up working right...
+;; Apply different theme for terminal or GUI (mostly for macOS issues).
+;;(defun apply-term-or-gui-theme ()
+;;  "Apply either a terminal or GUI theme."
+;;  (if (display-graphic-p)
+;;      (enable-theme 'sanityinc-solarized-dark)
+;;    (enable-theme 'solarized-dark)))
+;;
+;;(add-hook 'after-init-hook 'apply-term-or-gui-theme)
+;;(add-hook 'after-make-frame-functions 'apply-term-or-gui-theme)
 
 
 ;; Toggle between light and dark
