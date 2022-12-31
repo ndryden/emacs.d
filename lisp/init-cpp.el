@@ -3,6 +3,8 @@
 ;;; Code:
 
 (when (maybe-require-package 'lsp-mode)
+  (require-package 'yasnippet)
+  (require-package 'yasnippet-snippets)
   (require-package 'lsp-ui)
   (require-package 'ccls)
   (setq ccls-executable "ccls")
