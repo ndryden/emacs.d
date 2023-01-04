@@ -25,6 +25,12 @@
     (with-eval-after-load 'corfu
       (corfu-popupinfo-mode)))
 
+  (when (maybe-require-package 'kind-icon)
+    (with-eval-after-load 'corfu
+      (setq-default kind-icon-default-face 'corfu-default)
+      (setq-default kind-icon-use-icons nil)
+      (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)))
+
   ;; TODO: https://github.com/jdtsmith/kind-icon
   )
 

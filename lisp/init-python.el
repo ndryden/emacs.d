@@ -15,6 +15,7 @@
 (setq python-shell-interpreter "python3")
 
 (require-package 'pip-requirements)
+(require-package 'pyvenv)
 
 (when (maybe-require-package 'toml-mode)
   (add-to-list 'auto-mode-alist '("poetry\\.lock\\'" . toml-mode)))
@@ -22,10 +23,10 @@
 ;;(when (maybe-require-package 'reformatter)
 ;;  (reformatter-define black :program "black" :args '("-")))
 
-(when (maybe-require-package 'lsp-mode)
-  (require-package 'lsp-pyright)
-  (add-hook 'python-mode-hook
-            (lambda () (lsp))))
+;;(when (maybe-require-package 'lsp-mode)
+;;  (require-package 'lsp-pyright)
+;;  (add-hook 'python-mode-hook
+;;            (lambda () (lsp))))
 
 (provide 'init-python)
 ;;; init-python.el ends here
