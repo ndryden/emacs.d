@@ -104,6 +104,10 @@
   (setq epg-pinentry-mode 'loopback)
   (pinentry-start))
 
+
+
+;; Disable unneeded version control.
+(setq vc-handled-backends '(Git))
 
 (provide 'init-git)
 ;;; init-git.el ends here
