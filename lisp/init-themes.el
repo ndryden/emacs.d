@@ -6,6 +6,8 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 (require 'solarized-theme)
 
+(set-face-attribute 'default nil :family "MonoLisa" :foundry "nil" :height 115)
+
 ;; Don't prompt to confirm theme safety. This avoids problems with
 ;; first-time startup on Emacs > 26.3.
 (setq custom-safe-themes t)
