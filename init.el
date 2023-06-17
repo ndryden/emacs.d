@@ -40,6 +40,7 @@
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
+(setq initial-major-mode 'text-mode)  ;; Prefer text to Lisp.
 
 
 ;; Allow users to provide an optional "init-preload-local.el"

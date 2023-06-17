@@ -30,7 +30,8 @@
  set-mark-command-repeat-pop t
  tooltip-delay 1.5
  truncate-lines nil
- truncate-partial-width-windows nil)
+ truncate-partial-width-windows nil
+ sentence-end-double-space nil)
 
 (add-hook 'after-init-hook 'delete-selection-mode)
 
