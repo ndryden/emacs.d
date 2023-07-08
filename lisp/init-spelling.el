@@ -8,8 +8,9 @@
   (global-set-key (kbd "M-$") 'jinx-correct)
   (global-set-key (kbd "C-M-$") 'jinx-languages)
 
-  (add-to-list 'vertico-multiform-categories
-               '(jinx grid (vertico-grid-annotate . 20))))
+  (with-eval-after-load 'vertico
+    (add-to-list 'vertico-multiform-categories
+                 '(jinx grid (vertico-grid-annotate . 20)))))
 
 (provide 'init-spelling)
 ;;; init-spelling.el ends here
