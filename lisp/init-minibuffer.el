@@ -9,7 +9,8 @@
   (when (maybe-require-package 'embark)
     (with-eval-after-load 'vertico
       (define-key vertico-map (kbd "C-c C-o") 'embark-export)
-      (define-key vertico-map (kbd "C-c C-c") 'embark-act)))
+      (define-key vertico-map (kbd "C-c C-c") 'embark-act)
+      (vertico-multiform-mode 1)))
 
   (when (maybe-require-package 'consult)
     (defmacro sanityinc/no-consult-preview (&rest cmds)

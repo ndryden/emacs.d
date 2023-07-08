@@ -2,15 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'ispell)
+(when (maybe-require-package 'jinx)
+  (add-hook 'text-mode-hook 'jinx-mode)
+  (add-hook 'LaTeX-mode-hook 'jinx-mode)
+  (global-set-key (kbd "M-$") 'jinx-correct)
+  (global-set-key (kbd "C-M-$") 'jinx-languages)
 
-(when (executable-find ispell-program-name)
-  ;; Add spell-checking in comments for all programming language modes
-  (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
-  (with-eval-after-load 'flyspell
-    (define-key flyspell-mode-map (kbd "C-;") nil)
-    (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
+  (add-to-list 'vertico-multiform-categories
+               '(jinx grid (vertico-grid-annotate . 20))))
 
 (provide 'init-spelling)
 ;;; init-spelling.el ends here
