@@ -3,8 +3,9 @@
 ;;; Code:
 
 (when *is-a-mac*
-  (setq mac-command-modifier 'none)
+  (setq mac-command-modifier 'super)
   (setq mac-option-modifier 'meta)
+  (setq mac-function-modifier 'hyper)
   ;; Make mouse wheel / trackpad scrolling less jerky
   (setq mouse-wheel-scroll-amount '(1
                                     ((shift) . 5)
