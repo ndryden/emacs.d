@@ -4,10 +4,6 @@
 
 ;;; Code:
 
-;; For Emacs >= 27
-(setq read-process-output-max (* 1024 1024))
-
-
 (when (maybe-require-package 'eglot)
   (maybe-require-package 'consult-eglot)
   (maybe-require-package 'yasnippet)
@@ -15,7 +11,6 @@
 
 (with-eval-after-load 'abbrev (diminish 'abbrev-mode))
 (with-eval-after-load 'eldoc (diminish 'eldoc-mode))
-
 
 (provide 'init-eglot)
 ;;; init-eglot.el ends here

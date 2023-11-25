@@ -31,6 +31,12 @@
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 
+;; Process performance tuning
+
+(setq read-process-output-max (* 4 1024 1024))
+(setq process-adaptive-read-buffering nil)
+
+
 ;; Bootstrap config
 
 
@@ -114,6 +120,9 @@
 ;(require 'init-terraform)
 ;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
+(maybe-require-package 'just-mode)
+(maybe-require-package 'justl)
+
 (require 'init-auctex)
 (require 'init-cuda)
 (require 'init-cpp)
@@ -121,7 +130,7 @@
 
 (require 'init-paredit)
 (require 'init-lisp)
-(require 'init-slime)
+(require 'init-sly)
 ;;(require 'init-clojure)
 ;;(require 'init-clojure-cider)
 (require 'init-common-lisp)
@@ -134,14 +143,14 @@
 (require 'init-folding)
 (require 'init-dash)
 
-;;(require 'init-twitter)
-;; (require 'init-mu)
 ;;(require 'init-ledger)
+(require 'init-lua)
+(require 'init-terminals)
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'sudo-edit)
 (require-package 'gnuplot)
-(require-package 'lua-mode)
 (require-package 'htmlize)
 (when *is-a-mac*
   (require-package 'osx-location))
@@ -156,6 +165,11 @@
   (add-hook 'after-init-hook 'global-eldoc-mode))
 
 (require 'init-direnv)
+
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
 
 
 
