@@ -5,6 +5,7 @@
 (when (maybe-require-package 'jinx)
   (add-hook 'text-mode-hook 'jinx-mode)
   (add-hook 'LaTeX-mode-hook 'jinx-mode)
+  (diminish 'jinx-mode)
   (global-set-key (kbd "M-$") 'jinx-correct)
   (global-set-key (kbd "C-M-$") 'jinx-languages)
 

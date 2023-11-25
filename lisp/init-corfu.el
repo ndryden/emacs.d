@@ -17,7 +17,8 @@
 (when (maybe-require-package 'corfu)
   (setq-default corfu-auto t)
   (when (maybe-require-package 'cape)
-    (advice-add #'eglot-completion-at-point :around #'cape-wrap-noninterruptible))
+    (advice-add 'eglot-completion-at-point :around #'cape-wrap-noninterruptible)
+    (advice-add 'eglot-completion-at-point :around #'cape-wrap-buster))
   (with-eval-after-load 'eshell
     (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
   (setq-default corfu-quit-no-match 'separator)
