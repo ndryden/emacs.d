@@ -14,7 +14,7 @@
       completion-category-overrides nil)
 (setq completion-cycle-threshold 4)
 
-(when (maybe-require-package 'corfu)
+(when (and (version< "28.1" emacs-version) (maybe-require-package 'corfu))
   (setq-default corfu-auto t)
   (when (maybe-require-package 'cape)
     (advice-add 'eglot-completion-at-point :around #'cape-wrap-noninterruptible)
