@@ -72,6 +72,8 @@ Return a list of languages seen along the way."
 (setq treesit-font-lock-level 4)
 
 
+;; TODO: Auto-install treesitter grammars if not present: c, cpp, python.
+
 
 (provide 'init-treesitter)
 ;;; init-treesitter.el ends here
