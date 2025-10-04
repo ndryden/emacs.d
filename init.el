@@ -162,6 +162,7 @@
 ;;(require-package 'sudo-edit)
 ;;(require-package 'gnuplot)
 ;;(require-package 'htmlize)
+
 (when *is-a-mac*
   (require-package 'osx-location))
 ;;(maybe-require-package 'dotenv-mode)
