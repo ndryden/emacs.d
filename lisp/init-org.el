@@ -326,10 +326,10 @@ typical word processor."
 
 
 
-(require-package 'org-pomodoro)
-(setq org-pomodoro-keep-killed-pomodoro-time t)
-(with-eval-after-load 'org-agenda
-  (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
+;; (require-package 'org-pomodoro)
+;; (setq org-pomodoro-keep-killed-pomodoro-time t)
+;; (with-eval-after-load 'org-agenda
+;;   (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
 
 
 ;; ;; Show iCal calendars in the org agenda
