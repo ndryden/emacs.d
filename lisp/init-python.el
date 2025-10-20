@@ -24,7 +24,10 @@
   (add-hook 'python-mode-hook 'sanityinc/flymake-ruff-maybe-enable)
   (add-hook 'python-ts-mode-hook 'sanityinc/flymake-ruff-maybe-enable))
 
-(maybe-require-package 'ruff-format)
+(when (maybe-require-package 'ruff-format)
+  (add-hook 'python-mode-hook 'ruff-format-on-save-mode)
+  (add-hook 'python-ts-mode-hook 'ruff-format-on-save-mode)
+  (with-eval-after-load 'ruff-format (diminish 'ruff-format-on-save-mode)))
 
 (when (maybe-require-package 'toml-mode)
   (add-to-list 'auto-mode-alist '("poetry\\.lock\\'" . toml-mode)))
