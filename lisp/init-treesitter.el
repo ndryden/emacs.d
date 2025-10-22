@@ -15,6 +15,26 @@
 ;; common remappings are included below.
 
 
+
+;;; Install some common grammars.
+(setq treesit-language-source-alist
+      '((python "https://github.com/tree-sitter/tree-sitter-python" :revision "v0.23.6")
+        (c "https://github.com/tree-sitter/tree-sitter-c" :revision "v0.23.6")
+        (cpp "https://github.com/tree-sitter/tree-sitter-cpp" :revision "v0.23.4")
+        (cuda "https://github.com/tree-sitter-grammars/tree-sitter-cuda" :revision "v0.21.0")
+        ))
+
+(defun ensure-treesit-languages (&rest languages)
+  "Ensure all LANGUAGES grammars are installed for tree-sitter."
+  (dolist (lang languages)
+    (unless (treesit-language-available-p lang)
+      (message "Installing tree-sitter grammar for %s..." lang)
+      (treesit-install-language-grammar lang))))
+
+(ensure-treesit-languages 'python 'c 'cpp 'cuda)
+
+
+
 ;;; Enable built-in and pre-installed TS modes if the grammars are available
 
 (defun sanityinc/auto-configure-treesitter ()
@@ -70,10 +90,6 @@ Return a list of languages seen along the way."
 
 ;; Default
 (setq treesit-font-lock-level 4)
-
-
-;; TODO: Auto-install treesitter grammars if not present: c, cpp, python.
-
 
 (provide 'init-treesitter)
 ;;; init-treesitter.el ends here
