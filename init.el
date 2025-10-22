@@ -107,7 +107,7 @@
 (require 'init-cpp)
 (require 'init-cmake)
 
-(require 'init-paredit)
+(require 'init-smartparens)
 (require 'init-lisp)
 
 (when *spell-check-support-enabled*
@@ -119,8 +119,6 @@
 (require 'init-dash)
 
 (require 'init-terminals)
-
-;; Extra packages which don't require any configuration
 
 (when *is-a-mac*
   (require-package 'osx-location))
