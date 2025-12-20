@@ -29,11 +29,6 @@
   (with-eval-after-load 'corfu
     (corfu-popupinfo-mode))
 
-  ;; Make Corfu also work in terminals, without disturbing usual behaviour in GUI
-  (when (maybe-require-package 'corfu-terminal)
-    (with-eval-after-load 'corfu
-      (corfu-terminal-mode)))
-
   (when (maybe-require-package 'kind-icon)
     (with-eval-after-load 'corfu
       (setq-default kind-icon-default-face 'corfu-default)
