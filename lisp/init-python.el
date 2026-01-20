@@ -30,7 +30,7 @@
   (with-eval-after-load 'ruff-format (diminish 'ruff-format-on-save-mode)))
 
 (when (maybe-require-package 'toml-mode)
-  (add-to-list 'auto-mode-alist '("poetry\\.lock\\'" . toml-mode)))
+  (add-to-list 'auto-mode-alist '("\\(poetry\\|uv\\)\\.lock\\'" . toml-mode)))
 
 ;;(when (maybe-require-package 'reformatter)
 ;;  (reformatter-define black :program "black" :args '("-")))
@@ -39,6 +39,11 @@
 ;;  (require-package 'lsp-pyright)
 ;;  (add-hook 'python-mode-hook
 ;;            (lambda () (lsp))))
+
+(with-eval-after-load 'project
+  (add-to-list 'project-vc-extra-root-markers "pyproject.toml"))
+(with-eval-after-load 'projectile
+  (add-to-list 'projectile-project-root-files "pyproject.toml"))
 
 (provide 'init-python)
 ;;; init-python.el ends here
