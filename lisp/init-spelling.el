@@ -5,6 +5,8 @@
 (when (maybe-require-package 'jinx)
   (add-hook 'text-mode-hook 'jinx-mode)
   (add-hook 'LaTeX-mode-hook 'jinx-mode)
+  ;; Force the language because the LANG env var is unreliable.
+  (setq jinx-languages "en_US")
   (global-set-key (kbd "M-$") 'jinx-correct)
   (global-set-key (kbd "C-M-$") 'jinx-languages)
 
